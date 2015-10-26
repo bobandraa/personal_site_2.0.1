@@ -40,7 +40,7 @@ header {
 }
 
 .banner-img{
-  background-image: url("../images/photo-top-index.jpg");
+  background-image: url("../img/photo-top-index.jpg");
   background-size: cover;
   background-position: center center;
 }
