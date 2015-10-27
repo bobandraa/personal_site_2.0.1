@@ -71,7 +71,7 @@ header {
   margin: 0em 2.813em;
 }
 
-    /* Bootstrap Override*/
+/* Bootstrap Override*/
 
 .item{
   overflow: hidden;
@@ -201,7 +201,7 @@ ul li:hover{
     width: 85%;
     float: right;
   }
-   #contact-form-box{
+  #contact-form-box{
     margin: 0 auto ;
     width: 80%;
   }
