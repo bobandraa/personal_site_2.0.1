@@ -103,12 +103,6 @@ header {
 .item img{
   width: 100%;
 }
-.carousel-control {
-  height: 100%;
-  font-size: 5em;
-  color: black;
-  opacity: .4;
-}
 
 .pre_content{
   letter-spacing: 1px;
@@ -129,12 +123,8 @@ header {
   text-align: center;
 }
 
-.center_blogs {
-  text-align: center;
 
-}
-
-.blog_formatting{
+.text_formatting{
   padding: 2em;
 }
 
