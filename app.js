@@ -64,5 +64,9 @@ app.use(function(err, req, res, next) {
   });
 });
 
+var server = require('http').createServer(app);
+server.listen(port, function(){
+  console.log('Node server listening. Port: ' + port );
+});
 
 module.exports = app;
