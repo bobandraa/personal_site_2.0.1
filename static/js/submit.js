@@ -1,5 +1,5 @@
-$("#contact-form-box").keydown(function(event){
- if (event.keyCode == 13) {
+$("#contact-form-box").keypress(function(event){
+ if (event.which == 13) {
   $("#enter-submit").click();
  }
 });
