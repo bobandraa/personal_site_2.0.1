@@ -2,7 +2,7 @@ var port = process.env.PORT || 3000;
 
 var express = require('express');
 var path = require('path');
-var favicon = require('serve-favicon');
+// var favicon = require('serve-favicon');
 var nodemailer = require("nodemailer");
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
