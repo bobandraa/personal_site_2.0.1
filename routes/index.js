@@ -17,6 +17,15 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
+router.get('/technical/:id', function(req, res, next) {
+  var blog_id  = req.params.id;
+  res.render('week' + blog_id + '_technical', { title: 'Express' });
+});
+
+router.get('/cultural/:id', function(req, res, next) {
+  var blog_id  = req.params.id;
+  res.render('week' + blog_id + '_cultural', { title: 'Express' });
+});
 /*POST email body*/
 router.post('/email', function(req, res, next){
     var from = req.body.email;
