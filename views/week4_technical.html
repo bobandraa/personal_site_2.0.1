@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>06.27.14</title>
+		<link rel="stylesheet" type="text/css" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="/static/stylesheets/site_pages.css">
+		<link href="middleman/source/fonts/Proxima Nova Light.otf" >
+		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	</head>
+	<body>
+		<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+			<div class="container-fluid">
+				<span>b o b a n d r a</span>
+					<ul>
+					<li><a href="/">home</a></li>
+					<li><a href="projects.html">projects<a/></li>
+					<li><a href="about_me.html">about</a></li>
+					<li><a href="mailto:sandra.cohen.ux@gmail.com">contact</a></li>
+					</ul>
+			</div>
+		</nav>
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-10 col-md-offset-1 entries">
+					<code><h2>Enumerable #map</h2></code>					
+					<div class="date">
+						06.27.14
+					</div>
+					<div class="col-md-12 ">
+			    		<p>
+			    			Ok, I'll start this post by saying that the enumerable method <code>#map</code> threw me for a loop.. no pun intended. So bear with me through this explanation!
+			    		</p>
+			    		<p>
+			    			I'll start by first explaining what Enumerable is because, that too took me a while to truly wrap my mind around.(ok, I need to stop with the idioms..)
+			    		</p>
+		    				<code><h3>Enumerables</h3></code>
+			    		<p>
+				    		At it's very core, Enumerable is a powerful Ruby Module that contains methods that perform specific tasks on a collection. If you are able to imagine a use for <code>#each</code> other than purely iterating, there is most likely a method that exists to carry out that functionality. Classes that include the Enumerable module require that they hold an <code>#each</code> method.(
+				    		<code>Array</code>,<code>Hash</code> ,etc). Right, so to summarize, enumerables simply iterate through the objects they are called on.(correct me if im wrong!) So, this brings us to the  <code>#map</code> method.
+			    		</p>
+		    				<code><h3>#map</h3></code>
+			    		<p>
+				    		The map method modifies each element according to the instructions that are defined in a block &amp; returns a <em>modified</em> collection of elements. If no block is defined, an enumerator is returned. 
+				    		Basic syntax:
+					    		
+					    		<code>
+					    			<ul>
+					    				<li>map{ |obj| block} --> array</li>
+					    				<li>map--> an_enumerator</li>
+					    			</ul>
+					    		</code>
+					    	
+				    		<code>#map</code> will run your block and give you an object filled with whatever your block returned each time. Makes sense, right? Why would you do it any other way?
+			    		</p>
+		    				<h3>Life Before <code>#map</code></h3>
+			    		<div>
+			    			Lets say you wanted to get the exponent of every element in an array. You could:
+			    				<p class="code_block">
+				    				<code class="white_code">
+					         			def exponent_array(array)<br>
+					    			    &nbsp &nbsp exp_array = []<br>
+					    				&nbsp &nbsp for n in array<br>
+					    				&nbsp &nbsp &nbsp &nbspexp_array << n * n if n >= 1<br>
+					   					&nbsp &nbsp end<br>
+										&nbsp return exp_array<br>
+										end<br>
+					    				> array = [1, 2, 3, 4, 5, 6, 7, 8, 9]<br>
+										> exponent_array(array)<br>
+										=>[1, 4, 9, 16, 25, 36, 49, 64, 81]
+									</code>
+								</p>
+						 </div>
+						<p>
+							The above method takes an array and loops through each number and while the number is greater than 1, it then populates the empty array and returns the result. Fantastic.
+						</p>
+						<p>
+							Now let's see how <code>#map</code> handles this situation:
+						</p>
+						<p class="code_block">
+							<code class="white_code">
+								mapped_exponents = array.map{|n| n * n}<br>
+								=>[1, 4, 9, 16, 25, 36, 49, 64, 81]
+							</code>
+						</p>
+							<h4>...Well played, Ruby</h4>
+						<p>
+							Turns out there is another method where we can do something and collect the results, accurately named <code>#collect</code>, which works the <b>exact</b> same way. Depending on how you visualize performing the action; either by executing a block of code and <b>collect</b>ing the results or by re-<b>map</b>ping your original object through some sort of transformation, you're covered! As long as the class you use has its own <code>#each</code> method, you get access to the magic and many wonders of Enumerables.
+						</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+</body>
+	<footer>
+		<p>&copy; 2014 Sandra Cohen</p>
+	</footer>
+<html>
+
+

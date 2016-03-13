@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>07.12.14</title>
+		<link rel="stylesheet" type="text/css" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="/static/stylesheets/site_pages.css">
+		<link href="middleman/source/fonts/Proxima Nova Light.otf" >
+		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	</head>
+	<body>
+		<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+			<div class="container-fluid">
+			<span>b o b a n d r a</span>
+				<ul>
+					<li><a href="/">home</a></li>
+					<li><a href="projects.html">projects<a/></li>
+					<li><a href="about_me.html">about</a></li>
+					<li><a href="mailto:sandra.cohen.ux@gmail.com">contact</a></li>
+				</ul>
+			</div>
+		</nav>
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-10 col-md-offset-1 entries">
+				<code><h2>{ Blocks, Procs &amp; Lambdas }</h2></code>				
+					<div class="date">
+						07.12.14
+					</div>
+					<div class="col-md-12 ">
+						<p class="blog_formatting">
+	    			In this weeks post, I will provide a deeper look at blocks and their inner workings in order to introduce their lesser-known cousins Procs and lambdas. Remember in last week’s blog when I said that everything in Ruby is an object?  Well turns out that there are a few exceptions. 
+	    		</p>
+	    		<p class="blog_formatting">
+	    			Blocks are one of those expectations. Because they have no name but behave like functions, they are often called “anonymous functions". You can declare a block in two ways:
+	    			&nbsp;squiggly braces<code>{}</code> for one line 
+	    			&nbsp;<b>or</b> 
+	    			&nbsp;<code>do…end</code> for multiple lines.
+	    		</p>
+	    		<p class="code_block">
+		    		<code class="white_code">
+		    			> ['a','b','c'].each {|letter| print " #{letter}!"} <br/>
+	                    => a! b! c!<br>
+	                    <br>
+	                    > ['a','b','c'].each do |letter|<br>
+		                 &nbsp; &nbsp; print " #{letter}! "<br>
+                         &nbsp; &nbsp; end<br>
+                        => a! b! c!<br>
+					</code>
+	    		</p>
+	    		<p class="blog_formatting">
+	    			The results are identical in both cases. Blocks are usually used as arguments to other methods (like <code>#each</code>), just like you see in normal arguments in between parentheses. 
+	    		</p>
+	    		<p class="blog_formatting">
+	    			One reason blocks are so great is because you are able to write a generic method which wraps your code in a block and allows you to reuse it elsewhere. Methods like <code>#each</code> are able to operate on a block through the magic of the <code>yield</code> statement, which simply says to run the block passed to it.  Let’s write our own version of an <code>#each</code> method to get an idea of what’s happening under the hood when passing a block to a method.
+	    		</p>
+	    	    <p class="blog_formatting">
+	    			Instead of having to take the array as an argument like <code>my_each([“a”,”b”,”c”])</code>, let’s put our method into the Array class in order to call it directly on the array.
+	    		</p>
+	    	   <p class="code_block">
+		    		<code class="white_code">
+		    			class Array<br>
+  						 &nbsp; def my_each<br>
+    					 &nbsp; &nbsp; i = 0<br>
+   					     &nbsp; &nbsp; while i < self.size<br>
+       				     &nbsp; &nbsp; &nbsp; print "#{self[i]}!"<br>
+        				 &nbsp; &nbsp; &nbsp; i+=1<br>  
+        				 &nbsp; &nbsp; end<br>  
+    					 &nbsp; end<br>
+    					 &nbsp; self<br>
+ 						end<br>
+					</code>
+				</p>
+	    		<p class="blog_formatting">
+	    			In the preceding code, we iterate over the array that our <code>#my_each</code> method was called on (done by using <code>self</code>).  Then we call the block that we used when calling <code>#each</code> on our array and explicitly return our array.
+	    		</p>
+	    		<h3>Procs</h3>
+	    		<p class="blog_formatting">
+	    			In our <code>#my_each</code> example, we used a very basic, one-lined block, but what if you have a multi-line block? Wouldn’t it be nice if we could save your block into a variable? Unfortunately, because blocks are not objects, they can’t be saved to a variable and subsequently lack all of the abilities of real objects. Not to worry though! We have Procs (aka Procedures) for that! Well, technically a block <em>is</em> a  Proc (which is simply the class name for a block).  The block is kind of like a temporary version of a Proc that Ruby included just to make it really easy to use things like <code>#each</code>,<code>#map</code>, and <code>#sort</code> iterators.
+	    		</p>
+	    	    <p class="blog_formatting">
+	    			So, let’s save our block to a variable. In order to do this, we need to create a new Proc.
+	    		</p>
+	    		<p class="code_block">
+		    		<code class="white_code">
+		    		> my_proc = Proc.new { |arg| print "#{arg}! " }<br>
+					</code>
+				</p>
+				<p class="blog_formatting">
+	    			This gives our block a bit more permanence. We can use this block of code (now a Proc) as an input to a function by prepending it with and ampersand <code>&</code>
+	    		</p>
+	    	    <p class="code_block">
+		    		<code class="white_code">
+		    			> ["a","b","c"].each(&my_proc)<br>
+	                    => a! b! c!<br>
+					</code>
+	    		</p>
+	    		<p class="blog_formatting">
+	    			So magic! Much nice! Wow!
+	    		</p>
+	    	   <h3>Lambdas</h3>
+	    		<p class="blog_formatting">
+	    			Much like Procs, lambdas are objects. If Procs are a more fleshed-out version of blocks, then lambdas are a more fleshed-out version of Procs and one step closer to being methods themselves.  I want to focus on the differences between lambdas and Procs for a moment because they have so many similarities.
+	    		</p>
+	    		<p class="blog_formatting">
+	    			<ul>
+	    				<li>
+	    					+Lambas are much stricter than Procs about the correct number of arguments that are passed. (shots fired &amp; errors thrown!)
+	    				</li>
+	    				<li>&nbsp;</li>
+	    				<li>
+	    					+Lambdas safely allow the explicit <code>return</code> statement. This is because, <code>return</code> will only return from the lambda itself and not the enclosing method (which is what happens when you use <code>return</code> inside a block or Proc)
+	    				</li>
+	    			</ul>
+	    		</p>
+	    		<p class="code_block">
+		    		<code class="white_code">
+		    			> lambda do |word| <br>
+  						> &nbsp;  puts word<br>
+    					> &nbsp; return word   # you can do this in lambdas not Procs <br>
+   					    > end<br>
+					</code>
+				</p>
+				<p class="blog_formatting">
+					To summarize:
+	    			<ul>
+	    				<li>
+	    					<b>Blocks</b> are not objects. They are little unnamed code chunks that you can drop into other methods. (Used often)
+	    				</li>
+	    				<li>&nbsp;</li>
+	    				<li>
+	    					<b>Procs</b> are objects. They are identical to blocks but you can store them in variables to later pass them into functions as explicit arguments. 
+	    				</li>
+	    				<li>&nbsp;</li>
+	    				<li>
+	    					<b>Lambdas</b> are really full methods that just haven’t been name yet.
+	    				</li>
+	    				<li>&nbsp;</li>
+	    			</ul>
+	    		</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+	<footer>
+		<p>&copy; 2014 Sandra Cohen</p>
+	</footer>
+	<html>
+
+
+
