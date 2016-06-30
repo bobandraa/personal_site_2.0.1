@@ -5,6 +5,7 @@
   "main": "app.js",
   "scripts": {
     "start": "node app.js"
+
   },
   "dependencies": {
     "body-parser": "~1.13.2",
@@ -15,5 +16,8 @@
     "morgan": "~1.6.1",
     "nodemailer": "^1.8.0",
     "serve-favicon": "~2.3.0"
+  },
+  "engines": {
+    "node": "0.10.29"
   }
 }
