@@ -2,13 +2,14 @@ var express = require('express');
 var router = express.Router();
 var nodemailer = require('nodemailer');
 
+
 /*create default SMTP transport*/
 
 var transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
-        user: '',
-        pass: ''
+        user: process.env.MAILER_USER,
+        pass: process.env.MAILER_PASS
     }
 });
 
