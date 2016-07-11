@@ -2,6 +2,7 @@ var port = process.env.PORT || 3000;
 
 var express = require('express');
 var path = require('path');
+require('dotenv').config();
 // var favicon = require('serve-favicon');
 var nodemailer = require("nodemailer");
 var logger = require('morgan');
