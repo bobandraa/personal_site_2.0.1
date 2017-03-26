@@ -19,6 +19,10 @@ router.get('/', function(req, res, next) {
 });
 
 /* GET blog pages. */
+router.get('/blog-posts', function(req, res) {
+  res.render('blog-posts/blogs', { title: 'Blog posts', layout: 'layouts/blog' });
+});
+
 router.get('/blog-posts/:category/:id', function(req, res) {
   var category = req.params.category;
   var id = req.params.id;
