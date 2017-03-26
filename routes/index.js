@@ -15,7 +15,7 @@ var transporter = nodemailer.createTransport({
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Sandra Cohen' });
+  res.render('index', { title: 'bobandra' });
 });
 
 /* GET blog pages. */
