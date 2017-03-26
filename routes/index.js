@@ -18,6 +18,11 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'bobandra' });
 });
 
+/* GET past projects page. */
+router.get('/past-projects', function(req, res, next) {
+  res.render('past_projects', { title: 'Past projects', layout: 'layouts/blog' });
+});
+
 /* GET blog pages. */
 router.get('/blog-posts', function(req, res) {
   res.render('blog-posts/blogs', { title: 'Blog posts', layout: 'layouts/blog' });

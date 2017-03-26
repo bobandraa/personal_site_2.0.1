@@ -1,6 +1,8 @@
+$blog_item_header_color: #B06556;
+
 body {
   background-size: cover;
-  background-color: #7E8F7C;
+  background-color: #6BA797;
 }
 
 /* Section */
@@ -40,7 +42,7 @@ section ul li a:hover {
   letter-spacing: 2px;
   font-size: 18px;
   text-align: center;
-  color: #C63D0F;
+  color: $blog_item_header_color;
   padding: 5px 10px 15px 10px;
 }
 
@@ -70,12 +72,15 @@ section ul li a:hover {
 
 .blog_entry {
   letter-spacing: 1px;
-  color: #990000;
+  color: #000000;
   font-size: 14px;
   background-color: #E9ECEC;
   margin-top: 10px;
   margin-bottom: 25px;
   border-radius: 15px;
+  h3 {
+    color: $blog_item_header_color;
+  }
 }
 
 code {
@@ -149,7 +154,7 @@ h4 {
 ul li {
   letter-spacing: 0.125em;
   padding: 0.125em;
-  color: #990000;
+  color: $blog_item_header_color;
   list-style-type: none;
 }
 
@@ -163,7 +168,8 @@ footer p {
   width: 100%;
   font-size: 1.000em;
   background-color: #E9ECEC;
-  padding: .5%
+  padding: .5%;
+  color: #000;
 }
 
 /* Tablet */

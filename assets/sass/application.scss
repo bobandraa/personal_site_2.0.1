@@ -162,6 +162,11 @@ ul li {
 /* Tablet */
 
 @media screen and (max-width: 911px) {
+  .nav-title {
+    font-size: 1.75em;
+    padding-top: 15px;
+  }
+
   header span{
     float: left;
     padding: 20px 10px 5px 40px;
@@ -184,6 +189,10 @@ ul li {
 /* Mobile */
 
 @media screen and (max-width: 536px){
+  .nav-title {
+    font-size: 1.5em;
+  }
+
   header nav ul li a {
     text-align: center;
     float: none;
