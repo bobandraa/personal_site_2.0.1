@@ -1,18 +1,8 @@
 body {
-  /*font-family: proxima-nova;*/
-  font-weight: lighter;
-  margin: 0; }
+  font-family: proxima-nova, sans-serif;
+  font-weight: lighter; }
 
-/*Top Nav*/
-.fixed {
-  position: fixed;
-  top: 0;
-  height: 6.250em;
-  z-index: 999;
-  background-color: #67cecd;
-  color: white;
-  box-shadow: 0px 1px 1px #94999c; }
-
+/* Top Nav */
 nav {
   position: absolute;
   bottom: 0;
@@ -28,7 +18,7 @@ nav {
   font-size: 2.75em;
   font-weight: lighter; }
 
-/*Section*/
+/* Section */
 header {
   height: 100vh; }
 
@@ -41,27 +31,16 @@ header {
   background-color: #C63D0F;
   padding: 20px; }
 
-#contact {
-  width: 750px;
-  margin: auto;
-  padding-bottom: 1em; }
-
 #contact-form-box {
   background: #1e1e1d;
   padding: 5px 30px;
   margin: 0 auto;
   width: 45%; }
 
-#title_row {
-  background-color: #BCF1ED; }
-
 .indent_list {
   margin: 0em 2.813em; }
 
-/* Bootstrap Override*/
-.item {
-  overflow: hidden; }
-
+/* Bootstrap Override */
 .navbar {
   margin-bottom: 0; }
 
@@ -73,16 +52,11 @@ header {
   line-height: 2em;
   color: #FFF;
   font-size: 1em;
-  font-family: proxima-nova, sans-serif;
   font-weight: 200;
   letter-spacing: 0.1em; }
 
 .form-control:focus {
-  border-color: #FFF;
-  border: solid #FFF; }
-
-.item img {
-  width: 100%; }
+  border: 1px solid #FFF; }
 
 .pre_content {
   letter-spacing: 1px;
@@ -92,8 +66,10 @@ header {
 
 .entries {
   letter-spacing: 1px;
+  color: #990000;
   font-size: 14px;
   background-color: #E9ECEC;
+  margin-top: 10px;
   border-radius: 15px; }
 
 .center_content {
@@ -102,30 +78,24 @@ header {
 .text_formatting {
   padding: 2em; }
 
-/*Links*/
+/* Links */
 a {
-  color: #FFF;
-  font-family: proxima-nova; }
+  color: #FFF; }
 
 a:hover {
   text-decoration: none;
-  color: #FFF;
-  font-family: proxima-nova;
-  letter-spacing: 0.2em; }
+  color: #FFF; }
 
 a span::hover {
   text-decoration: none;
-  color: #C63D0F;
-  font-family: proxima-nova;
-  letter-spacing: 0.2em; }
+  color: #C63D0F; }
 
 h2 {
   text-align: center;
   padding: 10px 15px 30px 15px;
-  font-family: proxima-nova;
   letter-spacing: 0.3em; }
 
-/*Contact Icons*/
+/* Contact Icons */
 @font-face {
   font-family: 'IcoMoon';
   src: url("../fonts/icomoon.woff") format("woff"); }
@@ -145,13 +115,10 @@ ul li {
   display: inline;
   padding: 1em; }
 
-ul li:hover {
-  font-size: 1.1em; }
-
 .mr-t {
   margin-top: 10px; }
 
-/*Tablet*/
+/* Tablet */
 @media screen and (max-width: 911px) {
   header span {
     float: left;
@@ -167,7 +134,7 @@ ul li:hover {
     margin: 0 auto;
     width: 80%; } }
 
-/*Mobile*/
+/* Mobile */
 @media screen and (max-width: 536px) {
   header nav ul li a {
     text-align: center;

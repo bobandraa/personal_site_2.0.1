@@ -1,20 +1,9 @@
-body{
-  /*font-family: proxima-nova;*/
+body {
+  font-family: proxima-nova, sans-serif;
   font-weight: lighter;
-  margin: 0;
 }
 
-/*Top Nav*/
-
-.fixed{
-  position: fixed;
-  top: 0;
-  height: 6.250em;
-  z-index: 999;
-  background-color: #67cecd ;
-  color: white;
-  box-shadow: 0px 1px 1px #94999c;
-}
+/* Top Nav */
 
 nav {
   position: absolute;
@@ -33,7 +22,7 @@ nav {
   font-weight: lighter;
 }
 
-/*Section*/
+/* Section */
 
 header {
   height: 100vh;
@@ -50,38 +39,24 @@ header {
   padding: 20px;
 }
 
-#contact {
-  width: 750px;
-  margin: auto;
-  padding-bottom: 1em;
-}
-
-#contact-form-box{
+#contact-form-box {
   background: #1e1e1d;
   padding: 5px 30px;
-  margin: 0 auto ;
+  margin: 0 auto;
   width: 45%;
 }
 
-
-#title_row {
-  background-color:   #BCF1ED;
-}
 .indent_list{
   margin: 0em 2.813em;
 }
 
-/* Bootstrap Override*/
+/* Bootstrap Override */
 
-.item{
-  overflow: hidden;
-}
-
-.navbar{
+.navbar {
   margin-bottom: 0;
 }
 
-.form-control{
+.form-control {
   height: 3em;
   background-color: #343433;
   border-radius: 0;
@@ -89,75 +64,61 @@ header {
   line-height: 2em;
   color: #FFF;
   font-size: 1em;
-  font-family: proxima-nova, sans-serif;
   font-weight: 200;
   letter-spacing: 0.1em;
-
 }
 
-.form-control:focus{
-  border-color: #FFF;
-  border: solid #FFF;
+.form-control:focus {
+  border: 1px solid #FFF;
 }
 
-.item img{
-  width: 100%;
-}
-
-.pre_content{
+.pre_content {
   letter-spacing: 1px;
   font-size: 18px;
   text-align: center;
   padding-top: 20px;
 }
 
-.entries{
+.entries {
   letter-spacing: 1px;
+  color: #990000;
   font-size: 14px;
   background-color: #E9ECEC;
+  margin-top: 10px;
   border-radius: 15px;
-
 }
 
-.center_content{
+.center_content {
   text-align: center;
 }
 
-
-.text_formatting{
+.text_formatting {
   padding: 2em;
 }
 
-/*Links*/
+/* Links */
 
 a {
   color: #FFF;
-  font-family: proxima-nova;
 }
 
-a:hover{
+a:hover {
   text-decoration: none;
   color: #FFF;
-  font-family: proxima-nova;
-  letter-spacing: 0.2em;
 }
 
-a span::hover{
+a span::hover {
   text-decoration: none;
   color: #C63D0F;
-  font-family: proxima-nova;
-  letter-spacing: 0.2em;
 }
 
-h2{
+h2 {
   text-align: center;
   padding: 10px 15px 30px 15px;
-  font-family: proxima-nova;
   letter-spacing: 0.3em;
 }
 
-
-/*Contact Icons*/
+/* Contact Icons */
 
 @font-face {
   font-family: 'IcoMoon';
@@ -176,22 +137,20 @@ footer {
   background-color: #161616;
   color: #fff;
 }
-ul li{
+
+ul li {
   list-style: none;
   display: inline;
   padding: 1em;
 }
 
-ul li:hover{
-  font-size: 1.1em;
-}
-.mr-t{
- margin-top: 10px; 
+.mr-t {
+ margin-top: 10px;
 }
 
-/*Tablet*/
-@media screen and (max-width: 911px){
+/* Tablet */
 
+@media screen and (max-width: 911px) {
   header span{
     float: left;
     padding: 20px 10px 5px 40px;
@@ -199,30 +158,28 @@ ul li:hover{
     font-weight: lighter;
   }
 
-  nav ul{
+  nav ul {
     margin: 1%; /* make top nav banner thinner*/
     width: 85%;
     float: right;
   }
-  #contact-form-box{
+
+  #contact-form-box {
     margin: 0 auto ;
     width: 80%;
   }
-
 }
 
+/* Mobile */
 
-/*Mobile*/
 @media screen and (max-width: 536px){
-
-  header nav ul li a{
+  header nav ul li a {
     text-align: center;
     float: none;
     clear: both;
   }
 
-
-  nav ul{
+  nav ul {
     margin: 3%; /* make top nav banner thinner*/
     width: 90%;
     float: right;
@@ -241,22 +198,21 @@ ul li:hover{
     font-size: 15px;
   }
 
-  img.ri
-  {
+  img.ri {
     max-width: 80%;
     top: 10%;
     left: 10%;
     border-radius: 3px;
   }
 
-  .pre_content{
+  .pre_content {
     letter-spacing: 1px;
     font-size: 14px;
     text-align: center;
     padding-top: 1em;
   }
 
-  #contact-form-box{
+  #contact-form-box {
     margin: 0 auto ;
     width: 80%;
   }
@@ -268,4 +224,3 @@ ul li:hover{
     border-radius: 3px;
   }
 }
-
