@@ -1,9 +1,19 @@
 body {
-  font-family: proxima-nova, sans-serif;
+  font-family: "helvetica neue", sans-serif;
   font-weight: lighter;
 }
 
 /* Top Nav */
+
+.fixed {
+  position: fixed;
+  top: 0;
+  height: 6.250em;
+  z-index: 999;
+  background-color: #67cecd ;
+  color: white;
+  box-shadow: 0px 1px 1px #94999c;
+}
 
 nav {
   position: absolute;
@@ -16,6 +26,7 @@ nav {
 }
 
 .nav-title {
+  letter-spacing: 0.3em;
   float: left;
   padding: 20px;
   font-size: 2.75em;
