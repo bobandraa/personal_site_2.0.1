@@ -1,0 +1,82 @@
+<code><h1>class HowToRubyClasses</h1></code>
+<div>
+  <p>
+    By now, chances are that you’ve created several methods that generally work independently to - oh I don’t know, separate numbers with commas or create accountability groups. As you begin solving larger challenges, if you find that you are using the same method to run on a number of different objects, you would probably benefit from using a class. Granted you can always accomplish this using <code>if/else</code>, <code>unless</code>, or <code>case</code> statements to achieve the same result, but it will be at the cost of your codes organization and I’m sure you will be thankful you didn’t when the time comes to debug.
+  </p>
+  <p>
+    In the most generic terms, classes are templates for creating object instances. Okay, so what do I mean by that? Let zoom out from the programming world for a moment and refer to objects as we define them in the ‘real world.’ Everything around us is an object. A desk, a mug, a computer, a DVD (&amp; yes, at this point I’m just naming things in a two foot radius of myself- super creative, I know!)  Each object has it’s own attribute,for instance: desk (color, size, material) or DVD or movie ( genre, director, title). Each object is simply an instance of a class and shares all the same attributes of what is it to be a desk or a movie.  Once it became clear to me that everything in Ruby is also an object, I realized that we’ve been dealing with classes from the beginning.
+  </p>
+  <p>
+    Switching back to the programming world, if you can see that <code>Array</code> is an object instance of a class and gives you access to the method <code>#each</code>(among other methods), then you pretty much know how to <b>instantiate</b> new objects.
+    <div>
+      <code>
+        my_array = Array.new<br>
+        =>[]
+      </code>
+    </div>
+    <h5>Look familiar?</h5>
+  </p>
+  <p>
+    In order to better explain classes, let's create our very own.
+  </p>
+  <p>
+    Why don't we create a class for movie? When we create a class Movie, we want to make sure that we also provide a method to <code>initialize</code> which can also hold that objects attributes.  This way, when you call the <code>::new</code> method on the class Movie, it creates an instance of Movie which automatically runs your <code>#initialize</code> method setting up that Movie for use.
+  </p>
+  <p>
+    <code>
+      class Movie<br>
+      &nbsp &nbsp def initialize (genre, director, title)<br>
+      &nbsp &nbsp &nbsp #code<br>
+      &nbsp &nbsp end<br>
+      end<br>
+    </code>
+  </p>
+  <p>
+    Although some movies will share the same genre and/or director, it is unlikely that your movies will share a title. Turns out classes not only share their methods, but can also share their variables. In order to make sure that each movie will have a variable that functions the same way in your constructed class, we are given access to <b> instance variables</b> This way you’ll be able to use the variable <code>title</code>the same <b>way</b> for every instance of Movie while holding its own unique <b>value</b> or title in this case. In order to differentiate between variables and instances of them, we differentiate them using  <code>@instance_var_name</code> notation. These are also usually set up in your <code>#initialize</code> method like so:
+  </p>
+  <p>
+    <code>
+      class Movie<br>
+      &nbsp &nbsp def initialize (genre, director, title)<br>
+      &nbsp &nbsp &nbsp @genre = genre<br>
+      &nbsp &nbsp &nbsp @director = director<br>
+      &nbsp &nbsp &nbsp @title = title<br>
+      &nbsp &nbsp end<br>
+      end<br>
+    </code>
+  </p>
+  <p>
+    These instance variables help set up your Movie’s <b>state</b> and when that specific movie or instance is deleted, so are the associated instance variables.
+  </p>
+  <p>
+    Cool, so now you have a way to build a catalog of all your movies. Now that you have an efficient way to store your data, we are also given a way to make our Movie objects operate specific actions. Since these methods get called on an individual instance of the Movie class, they are referred to as <b>instance methods</b>. They work exactly like <code>#each</code>, <code>#map</code>, and <code>#sort </code> would for an instance on the <code>Array</code> class. These methods look like any other method; beginning with a <code>def</code> and ending with <code>end </code>.
+  </p>
+  <p>
+    <code>
+      class Movie<br>
+      &nbsp &nbsp def initialize (genre, director, title)<br>
+      &nbsp &nbsp &nbsp @genre = genre<br>
+      &nbsp &nbsp &nbsp @director = director<br>
+      &nbsp &nbsp &nbsp @title = title<br>
+      &nbsp &nbsp end<br>
+      <br>
+      &nbsp &nbsp def title_from_genre(genre)<br>
+      &nbsp &nbsp &nbsp  puts @title<br>
+      &nbsp &nbsp end<br>
+      end<br>
+    </code>
+  </p>
+  <p>
+    Cool, so now you have a way to build a catalog of all your movies. Now that you have an efficient way to store your data, we are also given a way to make our Movie objects operate specific actions. Since these methods get called on an individual instance of the Movie class, they are referred to as <b>instance methods</b>. They work exactly like <code>#each</code>, <code>#map</code>, and <code>#sort </code> would for an instance on the <code>Array</code> class. These methods look like any other method; beginning with a <code>def</code> and ending with <code>end </code>. If you wanted to find the title of a scary movie from your collection, you can do the following:
+  </p>
+  <p>
+    <code>
+      movie = Movie.new("scary","Danny Boyle","28 days later")<br>
+      movie.title_from_genre(2)<br>
+    </code>
+  </p>
+  <p>
+    <!-- Pants? -->
+    Although this method is just a basic call to print the title of the genre associated with it, instance methods are just like any other method outside of a class. But when you have multiple instances of your data, it only makes sense you utilize the <code>Class</code> structure.
+  </p>
+</div>

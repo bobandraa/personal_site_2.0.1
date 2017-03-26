@@ -1,0 +1,55 @@
+<h1>Week 8 Technical Blog</h1>
+<div>
+  <a href="http://railsforzombies.org"><img src="http://i.imgur.com/rg0AoQg.png?1" title="Rails for Zombies"/></a>
+  <p>
+    During the next several weeks, in addition to implementing material from Phase 0, new concepts are also sure to be introduced.  One term that I’ve heard thrown around is ‘Ruby on Rails’. That’s an awesomely catchy name but what does it really mean? In this post I will go over the basic capabilities and organization of Rails, why it’s conventions are so popular, some rails-isms to familiarize yourself with, as well as provide a link to a fantastic tutorial (fantastic mainly because: zombies).
+    <br>
+    Rails is a gem or ruby library that extends the Ruby programming language. In the larger sense, rails combines the ruby programming language with HTML, CSS and Javascript to create a web app that runs on a web server. Rails is built around the <a href=http://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller> Model-View-Controller </a> pattern.
+  </p>
+  <h3>MVC</h3>
+  <p>
+    The concept is simple yet powerful since you’re separating the data, logic, and display of your program resulting in an easily readable, maintainable, and updatable web app. By splitting the functionality, the MVC pattern prevents your code from mushing together and allows for a smoother debugging experience later on.<br/>
+    &nbsp;
+    Here is the MVC breakdown and their Rails representations:
+  </p>
+  <p>
+    <ul>
+      <li>
+        + Models (Active Record in Rails) are classes that interact with the database.  This facilitates the creation and storage of data to the database so that you do not need to write SQL (usually). Rails already handles that!
+      </li>
+      <li>&nbsp;</li>
+      <li>
+        + Views (Action View in Rails) renders the template written in HTML (usually) and displays the output.
+      </li>
+      <li>&nbsp;</li>
+      <li>
+        + Controllers (Action Controller in Rails) takes input, calls the model method, and passes the output to the view. Simply put, the controller can be thought of as the middleman between model and views. In order to guarantee the Action Controller does most of the groundwork that it's designed to do, we must adhere to it’s conventions.
+      </li>
+    </ul>
+  </p>
+  <p>
+  Part of why Rails is so popular and widely used is because their conventions are clever and pervasive.
+  </p>
+  <h3>Consistency creates Comprehension</h3>
+  <p>
+    The advantage of establishing conventions is obvious. Without a web app framework, a programmer faces a hefty task of creating their infrastructure (which will likely deviate from another programmer’s organization.) This makes collaboration more difficult and the overall development much slower. The conventions or default values of Rails is an example of “opinionated software” that extends to the concept of “Comprehension over Configuration” in Rails. What this means is that programmers will now be able to spend less time thinking about where things go or are configured and more time being productive on their project. However, having configuration accounted for can also add obscurity, especially for beginners. One of the comforts of programming is the expectation that everything that happens in an application is a direct result of some code.  With out a configuration file, there is no obvious code that shows how the data from the class is relating to its respective database.  A way to eliminate some obscurity is to learn some rails-isms that can help get an idea of how things are related based on syntax.
+  </p>
+  <h3>A couple Rails-isms</h3>
+  <p>
+    <ul>
+      <li>
+        + Naming conventions for classes and tables: Rails expects objects from a class <code>Person</code> (for example) to be saved to a database named <code> people </code> Rails actually includes a magical <b> pluralization engine </b> to interoperate what object maps to what table!
+      </li>
+      <li>&nbsp;</li>
+      <li>
+        + Methods take a hash rather than having dozens of individual parameters. This creates a stripped-down function call!
+      </li>
+    </ul>
+  </p>
+  <p>
+    &amp; there you have it! This is the most general explanation of Rails as I understand it. For a more in-depth explanation of <a href=http://guides.rubyonrails.org/active_record_basics.html> Active Record</a>, <a href= http://guides.rubyonrails.org/action_controller_overview.html> Action Controller</a>, and <a href= http://guides.rubyonrails.org/action_view_overview.html> Action View</a>, check out the Ruby on Rails guides. I also highly recommend working through the <a href= http://railsforzombies.org/> Rails for Zombies</a> tutorial to: #1 better understand how Rails interacts with databases  and #2 ..ZOMBIES :)
+  </p>
+  <p class = "center_content">
+    Hope this helps!
+  </p>
+</div>

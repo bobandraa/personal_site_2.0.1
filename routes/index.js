@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 var nodemailer = require('nodemailer');
 
+var BLOG_CATEGORIES = ['technical', 'cultural'];
 
 /*create default SMTP transport*/
 
@@ -16,6 +17,16 @@ var transporter = nodemailer.createTransport({
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Sandra Cohen' });
+});
+
+/* GET technical blog pages. */
+router.get('/blog-posts/:category/:id', function(req, res) {
+  var category = req.params.category;
+  var id = req.params.id;
+  if (BLOG_CATEGORIES.indexOf(category) >= 0) {
+    var title = 'Week ' + id + ' ' + category + ' blog post';
+    res.render('blog-posts/' + category + '/' + id, { title: title });
+  }
 });
 
 /*POST email body*/
