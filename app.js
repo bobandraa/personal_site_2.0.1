@@ -1,6 +1,7 @@
 var port = process.env.PORT || 3000;
 
 var express = require('express');
+var ejsLayouts = require("express-ejs-layouts");
 var path = require('path');
 require('dotenv').config();
 // var favicon = require('serve-favicon');
@@ -22,6 +23,8 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use("/static", express.static(__dirname + '/static'));
+app.use(ejsLayouts);
+app.set('layout', 'layouts/default');
 
 app.use('/', routes);
 

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="em">
+  <head>
+    <% include ../partials/head %>
+    <link rel="stylesheet" type="text/css" href="/static/stylesheets/blog.css">
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container-fluid">
+        <span>b o b a n d r a</span>
+      </div>
+    </nav>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-10 col-md-offset-1 entries">
+          <%- body %>
+        </div>
+      </div>
+    </div>
+    <% include ../partials/scripts %>
+  </body>
+  <footer>
+    <p>&copy; 2014 Sandra Cohen</p>
+  </footer>
+<html>

@@ -24,7 +24,7 @@ router.get('/blog-posts/:category/:id', function(req, res) {
   var id = req.params.id;
   if (BLOG_CATEGORIES.indexOf(category) >= 0) {
     var title = 'Week ' + id + ' ' + category + ' blog post';
-    res.render('blog-posts/' + category + '/' + id, { title: title });
+    res.render('blog-posts/' + category + '/' + id, { title: title, layout: 'layouts/blog' });
   }
 });
 

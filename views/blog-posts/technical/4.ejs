@@ -1,5 +1,8 @@
-<code><h1>Enumerable #map</h1></code>
-<div>
+<code><h2>Enumerable #map</h2></code>
+<div class="date">
+  06.27.14
+</div>
+<div class="col-md-12 ">
   <p>
     Ok, I'll start this post by saying that the enumerable method <code>#map</code> threw me for a loop.. no pun intended. So bear with me through this explanation!
   </p>
@@ -28,8 +31,8 @@
   <h3>Life Before <code>#map</code></h3>
   <div>
     Lets say you wanted to get the exponent of every element in an array. You could:
-    <p>
-      <code>
+    <p class="code_block">
+      <code class="white_code">
         def exponent_array(array)<br>
         &nbsp &nbsp exp_array = []<br>
         &nbsp &nbsp for n in array<br>
@@ -49,8 +52,8 @@
   <p>
     Now let's see how <code>#map</code> handles this situation:
   </p>
-  <p>
-    <code>
+  <p class="code_block">
+    <code class="white_code">
       mapped_exponents = array.map{|n| n * n}<br>
       =>[1, 4, 9, 16, 25, 36, 49, 64, 81]
     </code>

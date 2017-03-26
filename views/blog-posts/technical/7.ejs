@@ -1,13 +1,16 @@
-<code><h1>SQL Injection</h1></code>
-<div>
-  <div>
+<code><h2>SQL Injection</h2></code>
+<div class="date">
+  07.20.14
+</div>
+<div class="col-md-12 ">
+  <div class="center_content">
     <img src="http://i.imgur.com/YXYmWbL.jpg" title="SQL_Injection"/></a>
   </div>
-  <p>
+  <p class="blog_formatting">
     SQL stands for Structural Query Language. It’s a standardized language used to access and manipulate data in databases. SQL is exercised by users who have a question or <b>query</b> that they want answered. Their query is executed against a database, commonly structured in a table with columns and rows, retrieved and returned to the user from a database.
   </p>
   <h3>So, What is SQL Injection &amp; Why is it a Problem??</h3>
-  <p>
+  <p class="blog_formatting">
     SQL Injection is a security vulnerability where the attacker can issue SQL commands in order to gain access to the back-end SQL server. It is the most common web-app risks, perhaps because of how simple it is to achieve and has the potential to compromise virtually any website that is SQL database driven.<br/>
     Most commonly, attackers utilize login screens to check if a website is employing a SQL database. Checking this is almost effortless because one can exploit special characters in the SQL language which can return an error, if the website has poorly written code that doesn’t check for them. Once they have established that a SQL database is handling their users data, they are capable of tricking the site into thinking that the information passed in is correct. All one needs to do is pass in a statement that will return a  ‘true’ value.  For example, passing in <code>‘1=1’</code> will always evaluate to <code>true</code> and will force the selection of a <em>valid</em> username and BOOM! Now they have access to whatever user data (ususally senstive) is stored in that instance of user. Because the range of command manipulations is vast, the attacker can access data from several users, a specific user, or even perform complete table deletions.
   </p>
@@ -15,7 +18,7 @@
   <p>
     Considering how easy it is to perform an injection, developers need to protect themselves and their users from potentially supplying attackers with their information. There are a few ways one can prevent the manipulation or removal of data.
   </p>
-  <p>
+  <p class="blog_formatting">
     <ul>
       <li>
         + Make sure to perform the necessary string checking/ escaping for special SQL characters also known as <em>sterilization</em>.
