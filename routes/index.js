@@ -54,11 +54,15 @@ router.post('/email', function(req, res){
   transporter.sendMail({
     from: from,
     to: 'sandra.cohen.ux@gmail.com',
-    subject:  from + " would like to contact you!",
+    subject: from + " would like to contact you!",
     text: req.body.message
   }, function (err, body) {
-    console.log(err);
-    res.redirect("/");
+    var success = true;
+    if (err) {
+      success = false;
+    }
+
+    res.send(JSON.stringify({ success: success }));
   });
 });
 
