@@ -82,6 +82,18 @@
   color: #fff;
 }
 
+.resume-link {
+  color: #000;
+  display: block;
+  text-align: center;
+  margin: 0 auto;
+  margin-top: 15px;
+  width: 100px;
+  &:hover {
+    color: #aaa;
+  }
+}
+
 @media screen and (max-width: 767px) {
   .homepage-link-img-overlay-content {
     font-size: 4vw;
