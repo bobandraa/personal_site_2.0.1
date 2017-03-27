@@ -37,6 +37,7 @@ nav {
 
 /* Section */
 
+
 header {
   height: 100vh;
 }
@@ -50,6 +51,10 @@ header {
 #red_background {
   background-color: #cb5026;
   padding: 20px;
+}
+
+.homepage-links {
+  background-color: #6BA797;
 }
 
 #contact-form-box {
@@ -218,13 +223,6 @@ ul li {
     float: right;
     line-height: 5px;
     font-size: 15px;
-  }
-
-  img.ri {
-    max-width: 80%;
-    top: 10%;
-    left: 10%;
-    border-radius: 3px;
   }
 
   .pre_content {
