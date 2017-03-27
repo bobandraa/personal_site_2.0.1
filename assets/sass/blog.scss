@@ -5,6 +5,14 @@ body {
   background-color: #6BA797;
 }
 
+.back-button {
+  transform: scale(-1, 1);
+  font-size: 30px;
+  padding: 25px;
+  position: absolute;
+  right: 0;
+}
+
 /* Section */
 
 section h2 {

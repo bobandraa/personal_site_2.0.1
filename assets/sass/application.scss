@@ -10,9 +10,11 @@ body {
   top: 0;
   height: 6.250em;
   z-index: 999;
-  background-color: #67cecd ;
-  color: white;
+  background-color: #97c1b6;
+  color: #fff;
   box-shadow: 0px 1px 1px #94999c;
+  transition: background-color 0.5s;
+  -webkit-transition: background-color 0.5s;
 }
 
 nav {
@@ -45,8 +47,8 @@ header {
   background-position: center center;
 }
 
-#section_three {
-  background-color: #C63D0F;
+#red_background {
+  background-color: #cb5026;
   padding: 20px;
 }
 
