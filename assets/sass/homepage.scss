@@ -1,0 +1,155 @@
+.banner-img {
+  background-image: url("http://i.imgur.com/vdtABq3h.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+}
+
+.banner-img-overlay {
+  position: relative;
+  font-size: 2em;
+  color: #fff;
+  width: 100%;
+  text-align: center;
+  height: calc(100% - 87.5px);
+  letter-spacing: 0.1em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.banner-img-title {
+  font-size: 1em;
+}
+
+.banner-social-links {
+  font-size: 0.5em;
+  ul {
+    padding-left: 0;
+    li {
+      list-style: none;
+      display: inline;
+      padding: 1em;
+    }
+    a {
+      opacity: 1;
+      transition: 0.3s opacity;
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+  }
+}
+
+.about-me {
+  letter-spacing: 1px;
+  font-size: 18px;
+  padding-top: 20px;
+}
+
+.about-me-img {
+  width: 100%;
+  height: auto;
+}
+
+.homepage-links {
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+
+.homepage-link-img {
+  width: 100%;
+  height: auto;
+  opacity: 0.9;
+}
+
+.homepage-link-img-container {
+  position: relative;
+  margin-bottom: 15px;
+}
+
+%overlay {
+  top: 0;
+  left: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.homepage-link-img-overlay {
+  @extend %overlay;
+  font-size: 2em;
+  letter-spacing: 0.1em;
+  &:hover {
+    .homepage-link-img-overlay-content {
+      opacity: 0.7;
+    }
+
+    .homepage-link-img-overlay-title {
+      opacity: 0;
+    }
+  }
+}
+
+.homepage-link-img-overlay-content {
+  @extend %overlay;
+  padding: 15px;
+  background: #000;
+  opacity: 0;
+  color: #eee;
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  font-size: 2vw;
+}
+
+.homepage-link-img-overlay-title {
+  @extend %overlay;
+  padding: 15px;
+  opacity: 1;
+  color: #000;
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  font-weight: 400;
+  text-align: center;
+}
+
+.title-container {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+  left: 0;
+}
+
+.past-projects-title {
+  color: #fff;
+}
+
+.resume-link {
+  color: #000;
+  display: block;
+  text-align: center;
+  margin: 0 auto;
+  margin-top: 15px;
+  padding: 20px;
+  border: 1px solid #000;
+  width: 50%;
+  background-color: #fff;
+  transition: all 0.2s;
+  &:hover {
+    color: #bbb;
+    background-color: #333;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .homepage-link-img-overlay-content {
+    font-size: 4vw;
+  }
+
+  .homepage-link-img-overlay-content {
+    text-align: center;
+  }
+}

@@ -1,6 +1,7 @@
 var port = process.env.PORT || 3000;
 
 var express = require('express');
+var ejsLayouts = require("express-ejs-layouts");
 var path = require('path');
 require('dotenv').config();
 // var favicon = require('serve-favicon');
@@ -13,7 +14,7 @@ var app = express();
 
 // view engine setup
 app.engine('html', require('ejs').renderFile);
-app.set('view engine', 'html');
+app.set('view engine', 'ejs');
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
@@ -22,8 +23,8 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use("/static", express.static(__dirname + '/static'));
-
-// app.use(express.static(path.join(__dirname, 'public')));
+app.use(ejsLayouts);
+app.set('layout', 'layouts/default');
 
 app.use('/', routes);
 
@@ -35,10 +36,9 @@ app.use(function(req, res, next) {
 });
 
 // error handlers
-
-// development error handler
-// will print stacktrace
 if (app.get('env') === 'development') {
+  // development error handler
+  // will print stacktrace
   app.use(function(err, req, res, next) {
     res.status(err.status || 500);
     res.render('error', {
@@ -46,17 +46,18 @@ if (app.get('env') === 'development') {
       error: err
     });
   });
+} else {
+  // production error handler
+  // no stacktraces leaked to user
+  app.use(function(err, req, res, next) {
+    res.status(err.status || 500);
+    res.render('error', {
+      message: 'An error occurred',
+      error: {}
+    });
+  });
 }
 
-// production error handler
-// no stacktraces leaked to user
-app.use(function(err, req, res, next) {
-  res.status(err.status || 500);
-  res.render('error', {
-    message: err.message,
-    error: {}
-  });
-});
 
 var server = require('http').createServer(app);
 server.listen(port, function(){
