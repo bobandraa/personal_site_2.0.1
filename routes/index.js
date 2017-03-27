@@ -59,6 +59,7 @@ router.post('/email', function(req, res){
   }, function (err, body) {
     var success = true;
     if (err) {
+      console.log(err);
       success = false;
     }
 
