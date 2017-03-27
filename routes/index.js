@@ -28,11 +28,12 @@ router.get('/current-projects', function(req, res) {
   res.render('current_projects', { title: 'Current projects', layout: 'layouts/blog' });
 });
 
-/* GET blog pages. */
+/* GET blog index. */
 router.get('/blog-posts', function(req, res) {
   res.render('blog-posts/blogs', { title: 'Blog posts', layout: 'layouts/blog' });
 });
 
+/* GET blog pages. */
 router.get('/blog-posts/:category/:id', function(req, res) {
   var category = req.params.category;
   var id = req.params.id;
@@ -40,6 +41,11 @@ router.get('/blog-posts/:category/:id', function(req, res) {
     var title = 'Week ' + id + ' ' + category + ' blog post';
     res.render('blog-posts/' + category + '/' + id, { title: title, layout: 'layouts/blog' });
   }
+});
+
+/* REDIRECT on 404. */
+router.get('*', function(req, res){
+  res.redirect(301, '/');
 });
 
 /*POST email body*/
