@@ -16,13 +16,11 @@
     "express-ejs-layouts": "^2.2.0",
     "morgan": "1.8.1",
     "nodemailer": "3.1.8",
-    "serve-favicon": "2.4.2"
+    "serve-favicon": "2.4.2",
+    "gulp": "3.9.1",
+    "gulp-sass": "3.1.0"
   },
   "engines": {
     "node": "7.7.4"
-  },
-  "devDependencies": {
-    "gulp": "3.9.1",
-    "gulp-sass": "3.1.0"
   }
 }
