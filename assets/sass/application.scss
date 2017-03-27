@@ -42,12 +42,6 @@ header {
   height: 100vh;
 }
 
-.banner-img{
-  background-image: url("../img/photo-top-index.jpg");
-  background-size: cover;
-  background-position: center center;
-}
-
 #red_background {
   background-color: #cb5026;
   padding: 20px;
@@ -161,14 +155,13 @@ footer {
   color: #fff;
 }
 
-ul li {
-  list-style: none;
-  display: inline;
-  padding: 1em;
+.light-font {
+  font-weight: 100;
+  letter-spacing: 0.3em;
 }
 
 .mr-t {
- margin-top: 10px;
+  margin-top: 10px;
 }
 
 /* Tablet */
@@ -179,17 +172,11 @@ ul li {
     padding-top: 15px;
   }
 
-  header span{
+  .nav-title {
     float: left;
     padding: 20px 10px 5px 40px;
     font-size: 26px;
     font-weight: lighter;
-  }
-
-  nav ul {
-    margin: 1%; /* make top nav banner thinner*/
-    width: 85%;
-    float: right;
   }
 
   #contact-form-box {
@@ -203,31 +190,6 @@ ul li {
 @media screen and (max-width: 536px){
   .nav-title {
     font-size: 1.5em;
-  }
-
-  header nav ul li a {
-    text-align: center;
-    float: none;
-    clear: both;
-  }
-
-  nav ul {
-    margin: 3%; /* make top nav banner thinner*/
-    width: 90%;
-    float: right;
-  }
-
-  nav ul li {
-    background-color: #E9ECEC;
-    list-style-type: none;
-    padding-right: 20px;
-  }
-
-  nav ul li a {
-    text-decoration: none;
-    float: right;
-    line-height: 5px;
-    font-size: 15px;
   }
 
   .pre_content {

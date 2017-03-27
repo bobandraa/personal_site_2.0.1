@@ -1,3 +1,48 @@
+.banner-img {
+  background-image: url("http://i.imgur.com/vdtABq3h.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+}
+
+.banner-img-overlay {
+  position: relative;
+  font-size: 2em;
+  color: #fff;
+  width: 100%;
+  text-align: center;
+  height: calc(100% - 87.5px);
+  letter-spacing: 0.1em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.banner-img-title {
+  font-size: 1em;
+}
+
+.banner-social-links {
+  font-size: 0.5em;
+  ul {
+    padding-left: 0;
+    li {
+      list-style: none;
+      display: inline;
+      padding: 1em;
+    }
+    a {
+      opacity: 1;
+      transition: 0.3s opacity;
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+  }
+}
+
 .about-me {
   letter-spacing: 1px;
   font-size: 18px;
