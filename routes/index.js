@@ -14,13 +14,18 @@ var transporter = nodemailer.createTransport({
 });
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
+router.get('/', function(req, res) {
   res.render('index', { title: 'bobandra' });
 });
 
 /* GET past projects page. */
-router.get('/past-projects', function(req, res, next) {
+router.get('/past-projects', function(req, res) {
   res.render('past_projects', { title: 'Past projects', layout: 'layouts/blog' });
+});
+
+/* GET current projects page. */
+router.get('/current-projects', function(req, res) {
+  res.render('current_projects', { title: 'Current projects', layout: 'layouts/blog' });
 });
 
 /* GET blog pages. */
@@ -38,7 +43,7 @@ router.get('/blog-posts/:category/:id', function(req, res) {
 });
 
 /*POST email body*/
-router.post('/email', function(req, res, next){
+router.post('/email', function(req, res){
   var from = req.body.email;
   transporter.sendMail({
     from: from,
