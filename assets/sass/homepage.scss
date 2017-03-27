@@ -88,9 +88,14 @@
   text-align: center;
   margin: 0 auto;
   margin-top: 15px;
-  width: 100px;
+  padding: 20px;
+  border: 1px solid #000;
+  width: 50%;
+  background-color: #fff;
+  transition: all 0.2s;
   &:hover {
-    color: #aaa;
+    color: #bbb;
+    background-color: #333;
   }
 }
 
