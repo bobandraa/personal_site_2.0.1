@@ -4,8 +4,6 @@
   background-attachment: fixed;
   background-position: center bottom;
   background-repeat: no-repeat;
-  min-height: 100%;
-  min-width: 100%;
 }
 
 .banner-img-overlay {
@@ -149,6 +147,13 @@
   &:hover {
     color: #bbb;
     background-color: #333;
+  }
+}
+
+@media screen and (max-device-width: 1024px){
+  .banner-img {
+    background-image: url("http://i.imgur.com/rFimQpD.jpg");
+    background-attachment: scroll;
   }
 }
 

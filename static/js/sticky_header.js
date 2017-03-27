@@ -1,7 +1,7 @@
 $(document).ready(function(){
-  $(window).bind('scroll touchmove', function() {
+  $(window).bind('scroll ontouchmove', function() {
     var navHeight = $( window ).height() - 87;
-    if ($(window).scrollTop() > navHeight) {
+    if (window.pageYOffset > navHeight) {
       $('.nav').addClass('fixed');
     }
     else {
