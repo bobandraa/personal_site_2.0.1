@@ -7,7 +7,7 @@ body {
 
 .back-button {
   transform: scale(-1, 1);
-  font-size: 30px;
+  font-size: 25px;
   padding: 25px;
   position: absolute;
   right: 0;
@@ -98,6 +98,7 @@ code {
   padding: 1px;
   line-height: 1.4em;
   background-color: inherit;
+  word-wrap: break-word;
 }
 
 .code_block {
@@ -115,6 +116,14 @@ code {
 
 .center_content{
   padding: 1.5%;
+}
+
+.img_resize {
+  width: 70%;
+}
+
+.header_wrap{
+  word-wrap: break-word;
 }
 
 .blog_formatting {
@@ -135,6 +144,7 @@ a:hover {
 
 a img{
   opacity: 1;
+
 }
 
 a img:hover {
